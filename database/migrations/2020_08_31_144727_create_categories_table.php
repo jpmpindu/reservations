@@ -13,9 +13,16 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->integer('order')->default(1);
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->foreignId('parent_id')->unsigned()->nullable()->default(null);
             $table->timestamps();
+
+            $table->foreign('parent_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');
         });
     }
 

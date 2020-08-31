@@ -14,7 +14,13 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        
+        return view('type.index',[
+            'types' => $types,
+            'resource' => 'types',
+        ]);
+
     }
 
     /**
@@ -44,9 +50,14 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($id)
     {
-        //
+        $type = Type::find($id);
+        
+        return view('type.show',[
+            'type' => $type,
+        ]);
+
     }
 
     /**

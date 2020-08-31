@@ -15,12 +15,13 @@ class CreateRepresentationUsersTable extends Migration
     {
         Schema::create('representation_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('location_id')->nullable();
-            $table->foreignId('show_id');
+            $table->integer('places');
+            $table->foreignId('representation_id');
+            $table->foreignId('user_id');
 
-            $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('representation_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
 
-            $table->foreign('show_id')->references('id')->on('shows')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

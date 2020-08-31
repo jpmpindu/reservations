@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('artist', 'ArtistController@index');
+Route::get('artist/{id}', 'ArtistController@show');
+Route::get('type', 'TypeController@index');
+Route::get('type/{id}', 'TypeController@show');
+Route::get('locality', 'LocalityController@index');
+Route::get(' locality/{id}', 'LocalityController@show');
+Route::get('role', 'RoleController@index');
+Route::get('role/{id}', 'RoleController@show');
+
