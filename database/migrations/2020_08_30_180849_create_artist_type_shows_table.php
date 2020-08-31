@@ -13,9 +13,15 @@ class CreateArtistTypeShowsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('artist_type_shows', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('artist_type_id');
+            $table->foreignId('show_id');
+
+            $table->foreign('artist_type_id')->references('id')->on('artist_types')->onDelete('restrict')->onUpdate('cascade');
+
+            $table->foreign('show_id')->references('id')->on('shows')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

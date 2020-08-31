@@ -14,7 +14,7 @@ class CreateArtistsTable extends Migration
     public function up()
     {
         Schema::create('artists', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
         });

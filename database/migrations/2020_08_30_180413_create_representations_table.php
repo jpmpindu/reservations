@@ -13,9 +13,18 @@ class CreateRepresentationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('representations', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+        Schema::create('representations', function (Blueprint $table){
             $table->id();
-            $table->timestamps();
+            $table->foreignId('location_id')->nullable();
+            $table->foreignId('show_id');
+            $table->datetime('when');
+            
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
+            
+            $table->foreign('show_id')->references('id')->on('shows')
+                    ->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 
