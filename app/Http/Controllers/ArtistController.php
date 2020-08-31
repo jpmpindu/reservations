@@ -14,7 +14,13 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        //
+        $artists = Artist::all();
+        
+        return view('artist.index',[
+            'artists' => $artists,
+            'resource' => 'artistes',
+        ]);
+
     }
 
     /**
@@ -41,13 +47,18 @@ class ArtistController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Artist  $artist
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Artist $artist)
+    public function show($id)
     {
-        //
+        $artist = Artist::find($id);
+        
+        return view('artist.show',[
+            'artist' => $artist,
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

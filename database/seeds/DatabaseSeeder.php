@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ArtistSeeder::class,
             TypeSeeder::class,
+            AgencySeeder::class,
+            ArtistTypeSeeder::class,
+            LocalitySeeder::class,
+            // ArtistTypeShowSeeder::class,
+            // CategorySeeder::class,
         ]);
 
     }
