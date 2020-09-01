@@ -14,7 +14,12 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        $location = Location::find($id);
+        
+        return view('locations.show',[
+            'location' => $location,
+        ]);
+
     }
 
     /**
