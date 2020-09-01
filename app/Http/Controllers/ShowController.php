@@ -14,7 +14,13 @@ class ShowController extends Controller
      */
     public function index()
     {
-        //
+        $shows = Show::all();
+        
+        return view('show.index',[
+            'shows' => $shows,
+            'resource' => 'spectacles',
+        ]);
+
     }
 
     /**
@@ -44,9 +50,14 @@ class ShowController extends Controller
      * @param  \App\Show  $show
      * @return \Illuminate\Http\Response
      */
-    public function show(Show $show)
+    public function show($id)
     {
-        //
+        $show = Show::find($id);
+        
+        return view('show.show',[
+            'show' => $show,
+        ]);    
+
     }
 
     /**
