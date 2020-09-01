@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Locality;
+use App\Posts;
 use Illuminate\Http\Request;
 
-class LocalityController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,7 @@ class LocalityController extends Controller
      */
     public function index()
     {
-        $localities = Locality::all();
-        
-        return view('locality.index',[
-            'localities' => $localities,
-            'resource' => 'localities',
-        ]);
+        //
     }
 
     /**
@@ -46,26 +41,21 @@ class LocalityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Posts $posts)
     {
-       $locality = Locality::find($id);
-
-        return view('locality.show', [
-            'locality' => $locality,
-        ]);
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Locality  $locality
+     * @param  \App\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function edit(Locality $locality)
+    public function edit(Posts $posts)
     {
         //
     }
@@ -74,10 +64,10 @@ class LocalityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Locality  $locality
+     * @param  \App\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Locality $locality)
+    public function update(Request $request, Posts $posts)
     {
         //
     }
@@ -85,10 +75,10 @@ class LocalityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Locality  $locality
+     * @param  \App\Posts  $posts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Locality $locality)
+    public function destroy(Posts $posts)
     {
         //
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLocalitiesTable extends Migration
+class CreateAgenciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateLocalitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('localities', function (Blueprint $table) {
+        Schema::create('agencies', function (Blueprint $table) {
             $table->id();
-            $table->string('postal_code', 6)->unique();
-            $table->string('locality', 60)->unique();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateLocalitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localities');
+        Schema::dropIfExists('agencies');
     }
 }
