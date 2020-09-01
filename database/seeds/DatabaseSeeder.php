@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             AgencySeeder::class,
             ArtistTypeSeeder::class,
             LocalitySeeder::class,
+            LocationSeeder::class,
+            ShowSeeder::class,
+
             // ArtistTypeShowSeeder::class,
             // CategorySeeder::class,
         ]);

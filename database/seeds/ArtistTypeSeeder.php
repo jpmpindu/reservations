@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\ArtistType;
 use App\Artist;
 use App\Type;
+use App\Locality;
 
 class ArtistTypeSeeder extends Seeder
 {
@@ -14,6 +15,11 @@ class ArtistTypeSeeder extends Seeder
      */
     public function run()
     {
+        //Empty the table first
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Locality::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
         //Define data
         $artistTypes = [
             [

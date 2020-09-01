@@ -24,6 +24,7 @@ class LocalitySeeder extends Seeder
             ['postal_code'=>'1050','locality' => 'Ixelles'],
             ['postal_code'=>'1000','locality' => 'Bruxelles'],
             ['postal_code'=>'1170','locality' => 'Watermael-Boitsfort'],
+            ['postal_code'=>'7020', 'locality' => 'Mons'],
             
         ];
         

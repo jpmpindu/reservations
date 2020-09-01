@@ -12,8 +12,11 @@ class ArtistSeeder extends Seeder
      */
     public function run()
     {
-        //Empty the table first
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Artist::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        //Empty the table first
+        
         
         //Define data
        $artists = [
