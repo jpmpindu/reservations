@@ -14,7 +14,13 @@ class RepresentationController extends Controller
      */
     public function index()
     {
-        //
+        $representations = Representation::all();
+        
+        return view('representation.index',[
+            'representations' => $representations,
+            'resource' => 'représentations',
+        ]);
+
     }
 
     /**
@@ -44,9 +50,18 @@ class RepresentationController extends Controller
      * @param  \App\Representation  $representation
      * @return \Illuminate\Http\Response
      */
-    public function show(Representation $representation)
+    public function show($id)
     {
-        //
+        $representation = Representation::find($id);
+        $date = Carbon::parse($representation->when)->format('d/m/Y');
+        $heure = Carbon::parse($representation->when)->format('G:i');
+        
+        return view('representation.show',[
+            'representation' => $representation,
+            'date' => $date,
+            'heure' => $heure,
+        ]);
+
     }
 
     /**

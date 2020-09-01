@@ -29,4 +29,12 @@ Route::get('locality', 'LocalityController@index');
 Route::get(' locality/{id}', 'LocalityController@show');
 Route::get('role', 'RoleController@index');
 Route::get('role/{id}', 'RoleController@show');
+Route::get('location', 'LocationController@index');
+Route::get('location/{id}', 'LocationController@show');
+Route::get('show', 'ShowController@index');
+Route::get('show/{id}', 'ShowController@show');
+Route::get('representation', 'RepresentationController@index');
+Route::get('representation/{id}', 'RepresentationController@show');
+
+
 
