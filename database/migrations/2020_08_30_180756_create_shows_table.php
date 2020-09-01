@@ -23,8 +23,12 @@ class CreateShowsTable extends Migration
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
             $table->foreignId('location_id')->index();
+            $table->foreignId('show_id');
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('show_id')->references('id')->on('shows')
+                    ->onDelete('restrict')->onUpdate('cascade');
+
           
 
            

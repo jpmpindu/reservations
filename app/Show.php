@@ -43,4 +43,10 @@ class Show extends Model
         return $this->belongsTo('App\Location');
     }
 
+    public function representations()
+    {
+        return $this->hasMany('App\Representation');
+    }
+
+
 }

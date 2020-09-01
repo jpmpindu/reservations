@@ -50,5 +50,11 @@ class Location extends Model
         return $this->hasMany('App\Show');
     }
 
+    public function representations()
+    {
+        return $this->hasMany('App\Representation');
+    }
+
+
 
 }
