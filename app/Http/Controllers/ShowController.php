@@ -52,7 +52,7 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-                $show = Show::find($id);
+        $show = Show::find($id);
         
         //Récupérer les artistes du spectacle et les grouper par type
         $collaborateurs = [];
