@@ -48,5 +48,10 @@ class Show extends Model
         return $this->hasMany('App\Representation');
     }
 
+    public function artistTypes()
+    {
+        return $this->belongsToMany('App\ArtistType', 'artist_type_shows');
+    }
+
 
 }

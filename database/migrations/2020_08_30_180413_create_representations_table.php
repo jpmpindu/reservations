@@ -16,7 +16,7 @@ class CreateRepresentationsTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('representations', function (Blueprint $table){
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('location_id')->nullable();
+            $table->unsignedBigInteger('location_id')->nullable(); 
             $table->unsignedBigInteger('show_id')->nullable();
             $table->datetime('when'); 
             

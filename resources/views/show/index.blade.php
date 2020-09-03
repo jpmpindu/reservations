@@ -4,7 +4,11 @@
 
 @section('content')
     <article>
-        <h1>{{ $shows->title }}</h1>
+        @foreach($shows as $show )
+            <td>
+                <a href="{{route('show.show', $show->id)  }}">{{ $show->title }}</a>
+            </td>
+        @endforeach
 
         //…
 
