@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('login')->length(30);
             $table->string('password')->length(255);
-            $table->foreignId('role_id');
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
             $table->string('email')->length(100)->unique();
@@ -26,8 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('langue',2)->default('EN');
             $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

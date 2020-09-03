@@ -18,11 +18,6 @@ class CreateArtistsTable extends Migration
             $table->id();
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
-
-            $table->foreignId('agency_id')->nullable();
-            $table->foreign('agency_id')
-                ->references('id')->on('agencies')
-                ->onDelete('cascade');
         });
     }
 

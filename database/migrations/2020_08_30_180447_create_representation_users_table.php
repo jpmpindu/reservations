@@ -19,7 +19,7 @@ class CreateRepresentationUsersTable extends Migration
             $table->foreignId('representation_id');
             $table->foreignId('user_id');
 
-            $table->foreign('representation_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('representation_id')->references('id')->on('representations')->onDelete('restrict')->onUpdate('cascade');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
         });

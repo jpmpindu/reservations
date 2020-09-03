@@ -4,7 +4,7 @@
 
 @section('content')
     <article>
-        <h1>{{ $show->title }}</h1>
+        <h1>{{ $shows->title }}</h1>
     
 //…
 
