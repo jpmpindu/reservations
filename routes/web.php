@@ -35,6 +35,8 @@ Route::get('show', 'ShowController@index');
 Route::get('show/{id}', 'ShowController@show');
 Route::get('representation', 'RepresentationController@index');
 Route::get('representation/{id}', 'RepresentationController@show');
+Route::get('users', 'UsersController@create');
+Route::post('users', 'UsersController@store');
 
 
 
