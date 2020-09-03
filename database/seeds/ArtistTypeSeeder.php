@@ -133,7 +133,7 @@ class ArtistTypeSeeder extends Seeder
 
             DB::table('artist_types')->insert([
                 'artist_id' => $artist->id,
-                'type_id' => $type->id,
+                'type_id' => $type->id, 
             ]);
         }
     }

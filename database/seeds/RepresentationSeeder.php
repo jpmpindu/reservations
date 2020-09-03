@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Representation;
+use App\Location;
+use App\Show;
 
 class RepresentationSeeder extends Seeder
 {
@@ -47,7 +50,7 @@ class RepresentationSeeder extends Seeder
             
             DB::table('representations')->insert([
                 'location_id' => $location->id ?? null,
-                'show_id' => $show->id,
+                'show_id' => $show->id ?? null,
                 'when' => $data['when'],
             ]);
         }

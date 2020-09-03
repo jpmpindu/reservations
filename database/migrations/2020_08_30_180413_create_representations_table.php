@@ -15,10 +15,10 @@ class CreateRepresentationsTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
         Schema::create('representations', function (Blueprint $table){
-            $table->id();
-            $table->foreignId('location_id')->nullable();
-            $table->foreignId('show_id');
-            $table->datetime('when');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('location_id')->nullable();
+            $table->unsignedBigInteger('show_id')->nullable();
+            $table->datetime('when'); 
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
             

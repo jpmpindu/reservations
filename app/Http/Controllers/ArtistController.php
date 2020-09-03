@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
+use App\ArtistType;
 use Illuminate\Http\Request;
 
 class ArtistController extends Controller
@@ -16,10 +17,7 @@ class ArtistController extends Controller
     {
         $artists = Artist::all();
         
-        return view('artist.index',[
-            'artists' => $artists,
-            'resource' => 'artistes',
-        ]);
+        return view('artist.index',compact('artists'));
 
     }
 
@@ -52,12 +50,10 @@ class ArtistController extends Controller
      */
     public function show($id)
     {
-        $artist = Artist::find($id);
+        $artist = Artist::with('artist_types.artists')->findOrFail($id);
+        return view("artist.show",compact('artist'));
         
-        return view('artist.show',[
-            'artist' => $artist,
-        ]);
-    }
+    } 
 
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-use App\Artist
+use App\Artist;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -14,10 +14,10 @@ class CreateRepresentationUsersTable extends Migration
     public function up()
     {
         Schema::create('representation_users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('places');
-            $table->foreignId('representation_id');
-            $table->foreignId('user_id');
+            $table->unsignedBigInteger('representation_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('representation_id')->references('id')->on('representations')->onDelete('restrict')->onUpdate('cascade');
 

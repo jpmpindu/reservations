@@ -161,7 +161,7 @@ class ArtistTypeShowSeeder extends Seeder
 
             DB::table('artist_type_shows')->insert([
                 'artist_type_id' => $artistType->id,
-                'show_id' => $show->id,
+                'show_id' => $show->id ?? null,
             ]);
         }
     }

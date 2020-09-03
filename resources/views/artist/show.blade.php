@@ -3,13 +3,25 @@
 @section('title', 'Fiche d\'un artiste')
 
 @section('content')
-    <h1>{{ $artist->firstname }} {{ $artist->lastname }}</h1>
-    
-    <h2>Liste des types</h2>
-    <ul>
-    @foreach($artist->types as $type)    
-        <li>{{ $type->type }}</li>
-    @endforeach
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $artist->firstname }}</td>
+                <td>{{ $artist->lastname }}</td>
+            </tr>
+            <tr>
+                @foreach ($artist->artist_types as $typeArtist )
+                    <td>{{ $typeArtist->type }}</td>
+                @endforeach
+            </tr>
+        </tbody>
+    </table>
 @endsection
 

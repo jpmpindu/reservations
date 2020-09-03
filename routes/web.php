@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('artist', 'ArtistController@index');
-Route::get('artist/{id}', 'ArtistController@show');
+Route::get('artist/{id}', 'ArtistController@show')->name('artist.show');;
 Route::get('type', 'TypeController@index');
 Route::get('type/{id}', 'TypeController@show');
 Route::get('locality', 'LocalityController@index');

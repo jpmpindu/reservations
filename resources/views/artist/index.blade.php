@@ -3,8 +3,6 @@
 @section('title', 'Liste des artistes')
 
 @section('content')
-    <h1>Liste des {{ $resource }}</h1>
-
     <table>
         <thead>
             <tr>
@@ -15,8 +13,12 @@
         <tbody>
         @foreach($artists as $artist)
             <tr>
-                <td>{{ $artist->firstname }}</td>
-                <td>{{ $artist->lastname }}</td>
+                <td>
+                    <a href="{{route('artist.show', $artist->id)  }}">{{ $artist->firstname }}</a>
+                </td>
+                <td>
+                    <a href="{{route('artist.show', $artist->id)  }}">{{ $artist->lastname }}</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -10,7 +10,7 @@ class ArtistType extends Model
         'artist_id', 'type_id',
     ];
 
-    protected $table = 'artist_type';
+    //protected $table = 'artist_type';
     public $timestamps = false;
     
     /**
@@ -24,7 +24,7 @@ class ArtistType extends Model
     /**
      * Get the artist for that association.
      */
-    public function artist()
+    public function artists()
     {
         return $this->belongsTo('App\Artist');
     }
@@ -32,15 +32,12 @@ class ArtistType extends Model
     /**
      * Get the type for that association.
      */
-    public function type()
+    public function types()
     {
         return $this->belongsTo('App\Type');
     }
 
-        public function artistType()
-    {
-        return $this->belongsTo('App\ArtistType');
-    }
+    
 
 
 }

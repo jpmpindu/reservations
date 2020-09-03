@@ -13,16 +13,16 @@ class CreateShowsTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        //Schema::disableForeignKeyConstraints();
         Schema::create('shows', function (Blueprint $table){
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('slug')->length(60);
             $table->string('title')->length(255);
             $table->string('poster_url')->length(255);
             $table->text('description');
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
-            $table->foreignId('location_id');
+            $table->unsignedBigInteger('location_id')->nullable();
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict')->onUpdate('cascade');
         });

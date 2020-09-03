@@ -75,7 +75,7 @@ class ShowSeeder extends Seeder
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'poster_url' => $data['poster_url'],
-                'location_id' => $location->id,
+                'location_id' => $location->id ?? null,
                 'bookable' => $data['bookable'],
                 'price' => $data['price'],
             ]);

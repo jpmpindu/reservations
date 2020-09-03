@@ -15,11 +15,11 @@ class ShowController extends Controller
     public function index()
     {
         $shows = Show::all();
-        dump($shows);
-        // return view('show.index',[
-        //     'shows' => $shows,
-        //     'resource' => 'spectacles',
-        // ]);
+        
+        return view('show.index',[
+            'shows' => $shows,
+            'resource' => 'spectacles',
+        ]);
 
     }
 

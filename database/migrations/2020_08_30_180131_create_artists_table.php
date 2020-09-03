@@ -13,9 +13,8 @@ class CreateArtistsTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('artists', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
         });

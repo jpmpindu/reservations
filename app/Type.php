@@ -18,5 +18,10 @@ class Type extends Model
         return $this->belongsToMany('App\Artist');
     }
 
+    public function artist_type()
+    {
+        return $this->hasMany('App\ArtistType'::class);
+    }
+
 
 }
