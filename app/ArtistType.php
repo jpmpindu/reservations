@@ -10,7 +10,7 @@ class ArtistType extends Model
         'artist_id', 'type_id',
     ];
 
-    //protected $table = 'artist_type';
+    protected $table = 'artist_types';
     public $timestamps = false;
     
     /**

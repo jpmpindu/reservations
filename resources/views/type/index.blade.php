@@ -3,11 +3,20 @@
 @section('title', 'Liste des types d’artistes')
 
 @section('content')
-    <h1>Liste des {{ $resource }}</h1>
-
-    <ul>
-    @foreach($types as $type)
-        <li>{{ $type->type}}</li>
-    @endforeach
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($types as $type)
+                <tr>
+                    <td>
+                        {{ $type->type }}
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection

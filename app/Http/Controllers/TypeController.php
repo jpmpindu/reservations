@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Type;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 class TypeController extends Controller
 {
@@ -16,10 +16,7 @@ class TypeController extends Controller
     {
         $types = Type::all();
         
-        return view('type.index',[
-            'types' => $types,
-            'resource' => 'types',
-        ]);
+        return view('type.index',compact('types')); 
 
     }
 
