@@ -32,7 +32,7 @@ Route::get('role/{id}', 'RoleController@show');
 Route::get('location', 'LocationController@index');
 Route::get('location/{id}', 'LocationController@show');
 Route::get('show', 'ShowController@index');
-Route::get('show/{id}', 'ShowController@show');
+Route::get('show/{id}', 'ShowController@show')->name('show.show');
 Route::get('representation', 'RepresentationController@index');
 Route::get('representation/{id}', 'RepresentationController@show');
 Route::get('users', 'UsersController@create');
